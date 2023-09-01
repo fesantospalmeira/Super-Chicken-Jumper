@@ -18,19 +18,19 @@ let isAlive;
 const jump = () => {
   chicken.classList.add('jump');
 
-  if (!isJumping ){
+  if (!isJumping) {
     isJumping = true;
     score += 10;
     scoreDisplay.innerHTML = `Score: ${score}`;
     setTimeout(() => {
       chicken.classList.remove('jump');
-      cooldownJump();  
+      cooldownJump();
     }, 600)
     return;
   }
 }
 
-function cooldownJump (){
+function cooldownJump() {
   isJumping = false;
 
 }
@@ -68,7 +68,7 @@ function resetGame() {
   hightScoreDisplay.innerHTML = `High Score: ${highScore}`;
 
   playButton.addEventListener('click', startGame);
-    
+
 }
 
 
@@ -76,7 +76,7 @@ function startGame() {
   isAlive = true;
 
   cleanGame();
- 
+
   score = 0;
   scoreDisplay.innerHTML = `Score: ${score}`;
 
@@ -129,7 +129,7 @@ playButton.addEventListener('click', () => {
     const birdTwoPosition = birdTwo.offsetLeft;
     const barnPosition = barn.offsetLeft;
     const sunPosition = sun.offsetLeft;
-  
+
     if (treePosition <= 70 && treePosition > 0 && chickenPosition < 61) {
       stopGame(treePosition, chickenPosition, birdOnePosition, birdTwoPosition, barnPosition, sunPosition);
 
@@ -145,9 +145,9 @@ playButton.addEventListener('click', () => {
 
 // Adiciona o listener de evento para o espaço do teclado
 document.addEventListener("keydown", function (event) {
-  
+
   if (event.code === "Space") {
-    if (isAlive){
+    if (isAlive) {
       jump();
 
     }
@@ -158,7 +158,7 @@ document.addEventListener("keydown", function (event) {
 
 // Adiciona o listener de evento para o toque na tela
 document.addEventListener("touchstart", function (event) {
-  if (isAlive){
+  if (isAlive) {
     jump();
 
   }
@@ -166,8 +166,8 @@ document.addEventListener("touchstart", function (event) {
 });
 
 
-window.addEventListener('keydown', function(e) {
-  if(e.keyCode == 32 && e.target == document.body) {
+window.addEventListener('keydown', function (e) {
+  if (e.keyCode == 32 && e.target == document.body) {
     e.preventDefault();
   }
 });
