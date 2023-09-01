@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,400;1,500&display=swap');
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #808080;
+    --blue: #8adefc;
+    --pink: #ff8cb2;
+
+    --font-primaria: 'Poppins', sans-serif;
+    --font-score: 'Orbitron', sans-serif;
+}
+
+
+/* TODO CONTEUDO RELACIONADO AO SITE EM GERAL */
+.main {
+    display: flex;
+    flex-direction: column;
+    background-image: url("/assets/background/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2% 2% 2% 10%;
+    gap: 15px;
+    align-items: center;
+    font-family: var(--font-primaria);
+    backdrop-filter: blur(10px);
+
+
+}
+
+@media (max-width: 1000px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about_header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about_content{
+        font-size: 15px;
+    }
+
+    .about_header_image {
+        margin-top: 20px;
+        width: 100px;
+    }
+}
+
+.header_text {
+    font-size: 40px;
+    font-weight: 500;
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+    border: 0.188rem solid var(--black);
+    background: linear-gradient(to bottom, var(--blue), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.header_menu {
+    display: flex;
+    font-size: 20px;
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+    border: 0.125rem solid var(--black);
+    border-radius: 1px;
+    background: linear-gradient(to bottom, var(--blue), var(--pink));
+    color: var(--black);
+    gap: 5rem;
+    font-weight: 400;
+
+}
+
+.header_menu_link,
+.header_menu_text {
+    transition: transform 0.3s ease-in;
+}
+
+.header_menu_link:hover {
+    color: var(--gray);
+    transform: scale(1.03);
+}
+
+
+.header_menu_text:hover {
+    color: var(--gray);
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue);
+    margin: 18.75rem 3.125rem 6.25rem 3.125rem;
+    border: 3px solid var(--black);
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+
+
+.about_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20%;
+    white-space: nowrap;
+    font-family: var(--font-primaria);
+    font-weight: 500;
+    font-size: 40px;
+    margin-top: 5%;
+
+}
+
+.about_content {
+    font-family: var(--font-primaria);
+    font-weight: 400;
+
+    word-break: normal;
+    margin: 3% 2% 3% 2%;
+    padding: 1%;
+    border: 2px solid var(--black);
+    border-radius: 2px;
+}
+
+.footer_social_medias {
+
+    padding: 1%;
+}
+
+.link_media {
+    transition: transform 0.3s ease-in;
+    display: inline-block;
+}
+
+.link_media:hover {
+    transform: scale(1.2);
+}
+
+/* TODO CONTEUDO VISUAL RELACIONADO AO JOGO! */
+.game_board {
+
+    width: 100%;
+    height: 500px;
+    border-top: 5px solid var(--black);
+    border-bottom: 15px solid var(--black);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(var(--blue), var(--pink));
+}
+
+#score {
+    padding: 2% 0 0 2%;
+    font-family: var(--font-score);
+    font-size: 20px;
+}
+
+#highScore {
+    padding: 10px 0 0 2%;
+    font-family: var(--font-score);
+    font-size: 20px;
+}
+
+#play-button {
+    top: 40%;
+    left: 50%;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+    padding: 21.5px 0;
+    background: var(--black);
+    color: var(--gray);
+    border-radius: 30%;
+    font-family: var(--font-score);
+    transition: transform 0.3s ease-in;
+}
+
+#play-button:hover {
+    color: var(--black);
+    background: var(--gray);
+    height: 63px;
+    width: 100px;
+    transform: scale(1.1);
+}
+
+.chicken {
+    width: 50px;
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    z-index: 2;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+
+}
+
+.tree {
+
+    position: absolute;
+    bottom: 0;
+    right: -60px;
+    width: 60px;
+    animation: none;
+    z-index: 1;
+
+}
+
+.tree.tree-animation {
+    /* Adiciona a animação da árvore quando a classe é adicionada */
+    animation: tree-animation 1s infinite linear;
+}
+
+.bird {
+    position: absolute;
+    right: -60px;
+    width: 60px;
+    bottom: 65%;
+    animation: none;
+
+}
+
+.bird.bird-animation {
+    /* Adiciona a animação dos pássaros quando a classe é adicionada */
+    animation: bird-animation 5s infinite linear;
+}
+
+.bird-two {
+    position: absolute;
+    right: -60px;
+    width: 60px;
+    bottom: 45%;
+    animation: none;
+
+}
+
+.bird-two.bird-animation {
+    /* Adiciona a animação dos pássaros quando a classe é adicionada */
+    animation: bird-animation 7s infinite linear;
+}
+
+.barn {
+    position: absolute;
+    right: 30%;
+    width: 320px;
+    height: 200px;
+    bottom: 0;
+    animation: none;
+
+}
+
+.barn.barn-animation {
+    /* Adiciona a animação do celeiro quando a classe é adicionada */
+    animation: barn-animation 15s infinite linear;
+}
+
+.sun {
+    position: absolute;
+    width: 170px;
+    right: 10%;
+    top: 20%;
+    animation: none;
+
+}
+
+.sun.sun-animation {
+    /* Adiciona a animação do sol quando a classe é adicionada */
+    animation: sun-animation 25s infinite linear;
+}
+
+.footer {
+    color: var(--blue);
+    background-color: var(--black);
+    padding: 1.5rem 1.5rem 1.5% 1.5rem;
+    text-align: center;
+    font-family: var(--font-primaria);
+    font-size: 20px;
+
+}
+
+
+@keyframes tree-animation {
+    from {
+        right: -60px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 170px;
+    }
+
+    50% {
+        bottom: 180px
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    70% {
+        bottom: 100px;
+    }
+
+    90% {
+        bottom: 25px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+
+}
+
+@keyframes bird-animation {
+    from {
+        right: -60px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes barn-animation {
+    from {
+        right: -320px;
+    }
+
+    to {
+        right: 100%;
+    }
+
+}
+
+@keyframes sun-animation {
+    from {
+        right: -170px;
+    }
+
+    to {
+        right: 100%;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./assets/icon/icon.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reset.css">
+
+
+    <title>Super Chicken Jumper</title>
+
+</head>
+
+<body>
+
+    <main class="main">
+
+        <header class="header">
+            <h1 class="header_text">Super Chicken Jumper</h1>
+
+            <nav class="header_menu">
+                <a class="header_menu_link" href="https://store.steampowered.com/app/584640/SUPER_CHICKEN_JUMPER/">Jogo
+                    Original</a>
+                <div class="header_menu_text" onclick="redirectToAboutGame()">Sobre o Jogo</div>
+            </nav>
+        </header>
+
+        <div class="game_board">
+
+            <div id="score">Score: 0</div>
+            <div id="highScore"></div>
+
+            <img src="sprites/spr_sun.png" class="sun" alt="sol">
+            <img src="sprites/spr_bird.gif" class="bird" alt="pássaro">
+            <img src="sprites/spr_bird.gif" class="bird-two" alt="outro pássaro">
+            <img src="sprites/spr_barn.png" class="barn" alt="celeiro">
+            <img src="sprites/spr_chicken_stopped.png" class="chicken" alt="Chicken">
+            <img src="sprites/spr_tree.png" class="tree" alt="árvore">
+            <button id="play-button">Play</button>
+
+        </div>
+
+        <div class="about">
+
+            <div class="about_header">
+                <h2 class="about_header_title">
+                    Sobre o Jogo
+                </h2>
+                <img class="about_header_image" src="./assets/icon/icon.png">
+            </div>
+            <div class="about_content">
+                <p class="about_content_p"> O mundo está em perigo. Forças malignas do passado voltaram para destruir o
+                    nosso
+                    planeta e o único indivíduo que a senhora Presidente confia para salvar as nossas vidas é você,
+                    Chicken.
+                </p>
+                <p class="about_content_p"> Pule pressionando o espaço ou clique na tela e desvie dos objetos que estão
+                    vindo em sua direção!</p>
+                <p> &nbsp </p>
+                <p class="about_content_p"> Essa é uma inspiração ao jogo original, criado por um fã.</p>
+                <p class="about_content_p"> O link para compra do jogo original está no topo da página.</p>
+            </div>
+    </main>
+
+    <footer class="footer">
+
+        <p> Desenvolvido Por Felipe dos Santos Palmeira</p>
+        <p> Feito por fã</p>
+
+        <div class="footer_social_medias">
+            <a class="link_media" href="https://github.com/fesantospalmeira"><img src="assets/github.png" alt="Github"></a>
+            <a class="link_media" href="https://www.linkedin.com/in/feli-palmeira/"><img src="assets/linkedin.png" alt="LinkedIn"></a>
+            <a class="link_media" href="https://www.instagram.com/felipalmeira/"><img src="assets/instagram.png" alt="Instagram"></a>
+        </div>
+
+    </footer>
+
+</body>
+
+<script src="./js/script.js" defer></script>
+
+</html>
