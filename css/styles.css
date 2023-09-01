@@ -45,8 +45,8 @@
     .header {
         display: flex;
         flex-direction: column;
+        padding: 2% ;
     }
-
     .about_header {
         display: flex;
         flex-direction: column;
@@ -107,7 +107,7 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--blue);
-    margin: 18.75rem 3.125rem 6.25rem 3.125rem;
+    margin: 20% 5% 7% 5%;
     border: 3px solid var(--black);
     border-radius: 3px;
     font-size: 20px;
