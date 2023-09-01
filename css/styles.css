@@ -45,8 +45,9 @@
     .header {
         display: flex;
         flex-direction: column;
-        padding: 2% ;
+        padding: 2%;
     }
+
     .about_header {
         display: flex;
         flex-direction: column;
@@ -60,6 +61,7 @@
         margin-top: 20px;
         width: 100px;
     }
+
 }
 
 .header_text {
@@ -179,10 +181,11 @@
 }
 
 #play-button {
-    top: 40%;
     left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
-    position: relative;
+    position: absolute;
     width: 100px;
     padding: 21.5px 0;
     background: var(--black);
@@ -195,9 +198,7 @@
 #play-button:hover {
     color: var(--black);
     background: var(--gray);
-    height: 63px;
-    width: 100px;
-    transform: scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .chicken {
