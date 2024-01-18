@@ -28,6 +28,7 @@ Bem-vindo ao Super Chicken Jumper, um jogo inspirado em um jogo original, criado
 - `css/reset.css`: Um arquivo CSS de reinicialização para garantir uma experiência consistente em diferentes navegadores.
 - `js/script.js`: O arquivo JavaScript que contém a lógica do jogo e as interações do usuário.
 - `assets/`: Um diretório que armazena imagens e ícones usados no jogo.
+- `audio/`: Um diretório que armazena as soundtracs usadas no jogo.
 
 ## Contato
 
