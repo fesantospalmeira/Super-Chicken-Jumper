@@ -227,7 +227,7 @@
 
 .tree.tree-animation {
     /* Adiciona a animação da árvore quando a classe é adicionada */
-    animation: tree-animation 1s infinite linear;
+    animation: tree-animation 2s infinite linear;
 }
 
 .bird {
@@ -300,7 +300,7 @@
 
 @keyframes tree-animation {
     from {
-        right: -60px;
+        right: -2000px;
     }
 
     to {

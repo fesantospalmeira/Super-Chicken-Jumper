@@ -13,6 +13,9 @@ let highScore = 0;
 let intervalId;
 let isJumping = false;
 let isAlive;
+let music = document.getElementById("aud1");
+let animationSpeedMultiplier = 2;
+
 
 //função do pulo
 const jump = () => {
@@ -59,6 +62,7 @@ function cleanGame() {
   sun.style.left = null;
 
   clearInterval(intervalId);
+  
 }
 
 
@@ -69,16 +73,20 @@ function resetGame() {
 
   playButton.addEventListener('click', startGame);
 
+  backgroundMusic.pause();
+  
 }
 
 
 function startGame() {
   isAlive = true;
 
+  initAudio();
   cleanGame();
 
   score = 0;
   scoreDisplay.innerHTML = `Score: ${score}`;
+
 
   tree.classList.add('tree-animation');
   birdOne.classList.add('bird-animation');
@@ -88,6 +96,28 @@ function startGame() {
   chicken.src = './sprites/spr_chicken.gif';
 
   playButton.style.display = 'none';
+  
+  tree.addEventListener('animationiteration', () => {
+    if (animationSpeedMultiplier >= 1.34){
+      animationSpeedMultiplier -= 0.01;
+      console.log("velocidade antes: " + animationSpeedMultiplier);
+      updateAnimationSpeed(animationSpeedMultiplier);
+    }
+    else{
+      animationSpeedMultiplier -= 0.001;
+      console.log("velocidade antes: " + animationSpeedMultiplier);
+      updateAnimationSpeed(animationSpeedMultiplier);
+    }
+  });
+}
+function updateAnimationSpeed(animationSpeedMultiplier) {
+  const animationDuration = animationSpeedMultiplier ; 
+  document.styleSheets[0].insertRule(
+    `.tree-animation { animation-duration: ${animationDuration}s !important; }`,
+    document.styleSheets[0].cssRules.length
+  );
+ 
+    
 }
 
 function stopGame(treePosition, chickenPosition, birdOnePosition, birdTwoPosition, barnPosition, sunPosition, fencePosition, fenceTwoPosition) {
@@ -116,6 +146,9 @@ function stopGame(treePosition, chickenPosition, birdOnePosition, birdTwoPositio
 
   }
   clearInterval(intervalId)
+  animationSpeedMultiplier = 2;
+  updateAnimationSpeed(animationSpeedMultiplier);
+
 }
 
 playButton.addEventListener('click', startGame);
@@ -134,7 +167,6 @@ playButton.addEventListener('click', () => {
       stopGame(treePosition, chickenPosition, birdOnePosition, birdTwoPosition, barnPosition, sunPosition);
 
       resetGame();
-
       clearInterval(intervalId);
 
     }
@@ -180,5 +212,19 @@ function redirectToAboutGame() {
     behavior: 'smooth'
   });
 }
+
+function initAudio() {
+  backgroundMusic = new Audio('./audio/soundtrack.mp3');
+  backgroundMusic.volume = 0.08;
+  backgroundMusic.addEventListener('loadeddata', () => {
+    backgroundMusic.play();
+  });
+  backgroundMusic.addEventListener('ended', () => {
+    resetBackgroundMusic();
+  });
+}
+
+
+
 
 

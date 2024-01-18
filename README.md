@@ -6,7 +6,7 @@ Bem-vindo ao Super Chicken Jumper, um jogo inspirado em um jogo original, criado
 
 ## Como Jogar
 
-1. Acesse o [link](https://super-chicken-jumper.vercel.app/).
+1. Acesse o link do GitHub Pages [aqui](https://fesantospalmeira.github.io/Super-Chicken-Jumper/).
 2. Clique no botão "Play" para começar.
 3. Controle o chicken pressionando a barra de espaço (ou tocando na tela, em dispositivos móveis).
 4. Desvie dos objetos que se movem em sua direção.
